@@ -1,15 +1,15 @@
 package logical;
 
-public class Sector extends Thread {
+public class Operacion extends Thread {
 	private int numSector;
 	private int numPista;
-	private String operacion;
+	private String nombreOperacion;
 	private Pista discoDuro;
-
-	public Sector(int numSector, int numPista, String operacion) {
+	
+	public Operacion(int numSector, int numPista, String operacion) {
 		super();
 		this.numSector = numSector;
-		this.operacion = operacion;
+		this.nombreOperacion = nombreOperacion;
 		this.numPista = numPista;
 	}
 
@@ -22,13 +22,13 @@ public class Sector extends Thread {
 	public void setNumSector(int numSector) {
 		this.numSector = numSector;
 	}
-	public String getOperacion() {
-		return operacion;
+	public String getNombreOperacion() {
+		return nombreOperacion;
 	}
 
 
-	public void setOperacion(String operacion) {
-		this.operacion = operacion;
+	public void setNombreOperacion(String operacion) {
+		this.nombreOperacion = operacion;
 	}
 
 	public int getNumPista() {
@@ -55,7 +55,7 @@ public class Sector extends Thread {
 	public void run() {
 		System.out.println("El disco comenzará a operar en la pista " + Integer.toString(this.numPista));
 		//Recorrer con condiciones para la ejecución.
-		System.out.println("El disco en el sector " + Integer.toString(this.numSector) + " está realizando la operación" + this.operacion);
+		System.out.println("El disco en el sector " + Integer.toString(this.numSector) + " está realizando la operación" + this.nombreOperacion);
 		
 	}
 }
